@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="car">
+      <div class="card-header mt-5">
+          <h3 class="text-center">Listado de Estudiantes</h3>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-dark me-md-2" type="button" routerLink='/nuevo-estudiante'>Agregar Estudiante</button>
+          </div>
+      </div>
+      <div class="card-body">
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th>
+                          Nombre
+                      </th>
+                      <th>
+                          Direccion
+                      </th>
+                      <th>
+                          Acciones
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="" *ngFor="let u of usuarios">
+                      <td>{{u.nombre}}</td>
+                      <td>{{u.direccion}}</td>
+                      <td>
+                          <button class="btn btn-warning" [routerLink]="['/edit-estudiante/', u.id]">Editar</button>
+                          <button class="btn btn-danger" (click)="eliminar(u.id)">Eliminar</button>
+                      </td>
+                  </tr>
+              </tbody>
+
+          </table>
+      </div>
+  </div>
+</div>
